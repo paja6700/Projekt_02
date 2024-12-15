@@ -45,3 +45,7 @@ def check_winner(board):
     if board[0][2] == board[1][1] == board[2][0] and board[0][2] != " ":
         return board[0][2]
     return None
+
+#draw check
+def is_draw(board):
+    return all(cell != " " for row in board for cell in row)
