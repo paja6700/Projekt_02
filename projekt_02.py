@@ -22,3 +22,12 @@ marks in a:
 ========================================
 Let's start the game""")
     
+#show game board
+def display_board(board):
+    print("========================================")
+    for row in board:
+        print("+---+---+---+")
+        print("| " + " | ".join(row) + " |")
+    print("+---+---+---+")
+    print("========================================")
+
