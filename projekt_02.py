@@ -4,7 +4,7 @@ author: Pavel Křivan
 email: paja6700@gmail.com
 discord: pavel007111
 """
-
+#add necessary library
 import sys
 
 #show game rules
@@ -33,7 +33,7 @@ def display_board(board):
 
 #check a winner
 def check_winner(board):
-    # Check rows, columns, and diagonals
+    #check rows, columns, and diagonals
     for row in board:
         if row[0] == row[1] == row[2] and row[0] != " ":
             return row[0]
@@ -55,7 +55,7 @@ def main():
     show_rules()
 
     #initialize the game board
-    board = [[" " for _ in rang(3)] for _ in range(3)]
+    board = [[" " for _ in range(3)] for _ in range(3)]
     players = ["O", "X"]
     current_player = 0
 
@@ -75,7 +75,7 @@ def main():
                 continue
 
             #place the player's mark
-            board[row][column] = player[current_player]
+            board[row][column] = players[current_player]
 
             #check a winner
             winner = check_winner(board)
@@ -91,7 +91,7 @@ def main():
                 break
 
             #switch player
-            current_play = 1 - current_player
+            current_player = 1 - current_player
 
         except ValueError:
             print("Wrong input. Enter a number between 1 and 9.")
